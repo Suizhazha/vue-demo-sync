@@ -4,7 +4,7 @@
     <hr>
 
     <!-- :money = 'n' props才可以获取外部n的数据 -->
-        <Child :money="n" v-on:useMoney = 'n = $event'/>
+        <Child :money.sync = 'n'/>
   </div>
 </template>
 <script>

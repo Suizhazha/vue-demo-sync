@@ -3,7 +3,7 @@
 我是儿子，我要花爸爸{{money}}块钱！
 
     <!-- 绑定事件，在父元素上监听事件-->
-    <button @click="$emit('useMoney', money - 100)">花钱！！！</button>
+    <button @click="$emit('update:money', money - 100)">花钱！！！</button>
   </div>
 </template>
 
