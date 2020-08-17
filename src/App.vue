@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    我是爸爸，我现在有{{n}}块钱
+    <hr>
+
+    <!-- :money = 'n' props才可以获取外部n的数据 -->
+        <Child :money="n" v-on:useMoney = 'n = $event'/>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Child from "@/components/Child"
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Child
+  },
+  data(){
+
+  return {n:10000}
   }
 }
 </script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  border:3px solid red;
+  padding: 10px;
 }
 </style>
